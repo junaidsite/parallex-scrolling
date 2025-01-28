@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parallax Scrolling |Moon</title>
+<link rel="stylesheet"  type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+
+        <a href="#" class="logo">logo </a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Text</a></li>
+            <li><a href="#">Parallax</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="stars.png" id="stars">
+        <img src="moon.png" id="moon">
+        <img src="mountains_behind.png" id="moon_behind">
+        <h2 id="text">Moon Light</h2>
+        <a href="#" id="btn">Explore</a>
+        <img src="mountains_front.png" id="moon_front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>parallax Scrolling</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis voluptate consequuntur minima nobis, totam qui ut praesentium hic officiis quam sit animi in deleniti voluptates consectetur dolorum voluptatibus, non commodi. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum aspernatur nobis iste amet voluptate? Quidem quos sequi voluptas vel molestiae sed adipisci, doloribus culpa placeat, cumque eaque, vitae ducimus at? Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti aperiam magni, iure saepe facere beatae esse velit laborum illum sapiente blanditiis quos alias nostrum qui ab ratione reprehenderit quidem molestiae. <br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum illum, at ut ea optio commodi rerum ad doloremque eligendi accusamus reiciendis eius blanditiis suscipit vitae accusantium, totam consequatur? Doloribus, laudantium!Lorem <br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et aperiam, sed cumque ex expedita aliquid autem voluptas cupiditate quas, non voluptate repudiandae, accusantium repellendus porro? Temporibus consectetur aut quibusdam iusto! Lorem ipsum dolor sit amet consectetur adipisicing elit. A ullam, aspernatur omnis at nostrum corporis est quis et nobis eius dolor laboriosam, vero natus perspiciatis tenetur consequatur aperiam fugit. Deserunt!<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et aperiam, sed cumque ex expedita aliquid autem voluptas cupiditate quas, non voluptate repudiandae, accusantium repellendus porro? Temporibus consectetur aut quibusdam iusto! Lorem ipsum dolor sit amet consectetur adipisicing elit. A ullam, aspernatur omnis at nostrum corporis est quis et nobis eius dolor laboriosam, vero natus perspiciatis tenetur consequatur aperiam fugit. Deserunt!</p>
+    </div>
+    <script>
+        let moon= document.getElementById('moon');
+        let moon_behind= document.getElementById('moon_behind');
+        let moon_front= document.getElementById('moon_front');
+        let stars= document.getElementById('stars');
+        let text= document.getElementById('text');
+        let btn= document.getElementById('btn');
+        let header= document.querySelector('header');
+        
+        window.addEventListener('scroll',function(){
+            let value= window.scrollY;
+            stars.style.left=value*0.25+'px';
+            moon_behind.style.top=value*1.05+'px';
+            moon_front.style.top=value*1.05+'px';
+            moon.style.top=value*1.05+'px';
+            text.style.marginRight=value*4+'px';
+            text.style.marginTop=value*1.5+'px';
+            btn.style.marginTop=value*1.5+'px';
+            header.style.top=value*0.5+'px';
+        })
+    </script>
+</body>
+</html>
